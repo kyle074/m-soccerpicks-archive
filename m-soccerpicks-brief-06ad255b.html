@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>竞猜足球 · 稳定通道说明页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e2a3a;
+      line-height: 1.65;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* ---- 导航 ---- */
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      padding: 14px 24px;
+      margin-bottom: 36px;
+      border: 1px solid #e6e9ef;
+    }
+
+    .site-label {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
+      color: #2c3e50;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #3a4a5e;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #4a7b9d;
+      color: #1a2a3a;
+    }
+
+    /* ---- hero 卡片 ---- */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e0e4ec;
+    }
+
+    .hero-card h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      color: #1b2a3a;
+    }
+
+    .hero-card p {
+      font-size: 1.05rem;
+      color: #3f4d5f;
+      max-width: 680px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card .sub-line {
+      display: inline-block;
+      background: #e9edf4;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #2f4156;
+      border: 1px solid #d5dce8;
+    }
+
+    /* ---- 场景模块 (3个卡片) ---- */
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px 22px 30px;
+      border: 1px solid #e2e6ef;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.15s, transform 0.1s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a2a3a;
+      letter-spacing: 0.2px;
+      border-left: 4px solid #6b8aae;
+      padding-left: 12px;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3d4b5e;
+      margin-bottom: 8px;
+    }
+
+    .scene-card .meta-tag {
+      display: inline-block;
+      margin-top: 8px;
+      background: #f0f4fc;
+      padding: 2px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #3f5a74;
+      border: 1px solid #d5deec;
+    }
+
+    /* ---- 常见说明板块 (FAQ风格) ---- */
+    .faq-section {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 32px 30px 28px;
+      margin-bottom: 32px;
+      border: 1px solid #e0e4ec;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      color: #1a2a3a;
+      letter-spacing: -0.2px;
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1f3247;
+      font-size: 1rem;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #3d4b5e;
+      max-width: 720px;
+    }
+
+    .faq-item a {
+      color: #3e6b8c;
+      text-decoration: none;
+      border-bottom: 1px dashed #b5c9db;
+    }
+
+    .faq-item a:hover {
+      border-bottom-style: solid;
+      color: #1f4b6e;
+    }
+
+    /* ---- 底部 ---- */
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7a8d;
+      padding: 20px 0 6px;
+      border-top: 1px solid #dce1ea;
+      margin-top: 16px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 780px) {
+      .scenes-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .hero-card {
+        padding: 30px 22px;
+      }
+
+      .hero-card h1 {
+        font-size: 1.6rem;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 20px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .faq-section {
+        padding: 22px 18px;
+      }
+
+      .scene-card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航（轻量） -->
+  <div class="top-bar">
+    <span class="site-label">⚽ 竞猜足球</span>
+    <div class="nav-links">
+      <a href="#">页面说明</a>
+      <a href="#">场景</a>
+      <a href="#">常见问题</a>
+    </div>
+  </div>
+
+  <!-- 核心介绍 hero -->
+  <div class="hero-card">
+    <h1>稳定的竞猜足球信息入口</h1>
+    <p>
+      如果您经常关注足球赛事并希望了解更集中的信息参考，<a href="https://m-soccerpicks.com">竞猜足球</a> 是一个可以持续访问的站点。
+      这里围绕比赛数据、球队动态以及相关资讯提供日常聚合，帮助用户节省四处搜寻的时间。
+    </p>
+    <p>
+      页面内容以清晰的结构组织，没有冗余的弹窗或复杂跳转。无论是赛前预览还是赛后梳理，信息流都保持在可读的节奏中。
+    </p>
+    <span class="sub-line">长期维护 · 内容稳定更新</span>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="scenes-grid">
+    <div class="scene-card">
+      <h3>赛前信息预览</h3>
+      <p>在比赛开始前，快速浏览对阵双方近期表现、阵容变化以及关键数据。所有内容均以卡片和列表方式呈现，便于对比。</p>
+      <span class="meta-tag">覆盖主流联赛</span>
+    </div>
+    <div class="scene-card">
+      <h3>数据参考与回顾</h3>
+      <p>历史交锋记录、进球分布、主场客场差异等指标被整理成简单易懂的模块。适合在分析时直接引用或作为辅助判断的资料。</p>
+      <span class="meta-tag">图形化展示</span>
+    </div>
+    <div class="scene-card">
+      <h3>资讯动态聚合</h3>
+      <p>关于教练言论、伤病信息、转会传闻等赛前赛后消息，筛选后集中在一个信息流中。不夸大、不渲染，仅做客观整理。</p>
+      <span class="meta-tag">来源标明</span>
+    </div>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <div class="faq-section">
+    <h2>常见说明</h2>
+
+    <div class="faq-item">
+      <strong>这个页面主要提供什么？</strong>
+      <p>本页面是 <a href="https://m-soccerpicks.com">竞猜足球</a> 的辅助介绍页，概括了站点的主要用途和内容组织方式。网站本身以足球赛事数据和资讯聚合为主，不包含任何违规或诱导性内容。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>信息更新频率如何？</strong>
+      <p>数据与资讯通常在每个比赛日前后进行同步更新。页面上会显示最近一次刷新的时间戳（位于具体模块内），用户可自行判断时效性。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>是否收费或需要注册？</strong>
+      <p>目前浏览所有公开内容均无需注册或付费。网站不收集用户敏感信息，也不通过弹窗或强制跳转引导额外操作。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>移动端适配怎么样？</strong>
+      <p>整个站点采用响应式设计，在手机和平板设备上均可正常阅读。卡片布局会根据屏幕宽度自动调整，保证文字清晰、按钮可点。</p>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <span>访问 <a href="https://m-soccerpicks.com" style="color:#3e6b8c; text-decoration:none; border-bottom:1px dashed #b5c9db;">竞猜足球</a> 获取更多内容 · 保持理性 · 信息仅供参考</span>
+  </div>
+
+</div>
+</body>
+</html>
