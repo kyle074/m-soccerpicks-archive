@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>半岛体育 – 稳定入口·体育数据服务</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #f0f6fa 0%, #e7f0f5 100%);
+      color: #1a2b3c;
+      line-height: 1.6;
+      padding: 0 1.5rem 3rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* –––––– Hero –––––– */
+    .hero {
+      padding: 3.2rem 1rem 2.8rem;
+      text-align: center;
+      background: linear-gradient(135deg, #1a4b5c 0%, #0e7a8a 100%);
+      border-radius: 0 0 3rem 3rem;
+      margin: 0 -1.5rem 2.5rem;
+      box-shadow: 0 12px 30px rgba(14, 122, 138, 0.25);
+      color: #f3feff;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 span {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 0.7rem;
+      vertical-align: middle;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.92;
+    }
+
+    /* –––––– 网格卡片 –––––– */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .card {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(14, 122, 138, 0.2);
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 30, 40, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(14, 122, 138, 0.12);
+      border-color: #0e7a8a;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #115f6e;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h3::before {
+      content: "◆";
+      color: #0e7a8a;
+      font-size: 1.1rem;
+      margin-right: 0.2rem;
+    }
+
+    .card p {
+      color: #1f3a45;
+      font-size: 0.98rem;
+    }
+
+    /* –––––– 说明区（知识型段落） –––––– */
+    .explainer {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #bee3e9;
+      box-shadow: 0 8px 18px rgba(0, 40, 50, 0.04);
+    }
+
+    .explainer h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #0e5f6b;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid #0e7a8a;
+      padding-left: 1rem;
+    }
+
+    .explainer p {
+      margin-bottom: 1.1rem;
+    }
+
+    .explainer .tag {
+      display: inline-block;
+      background: #d4eff5;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #0b525f;
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+
+    /* –––––– FAQ 摘要（折叠风格） –––––– */
+    .faq-summary {
+      background: #eef7fa;
+      border-radius: 28px;
+      padding: 1.8rem 2rem 2rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #b7dce3;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0b5b68;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px dashed #b0d3db;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1e5663;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #2a4b56;
+      font-size: 0.96rem;
+    }
+
+    /* –––––– 底部链接 –––––– */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem 2.2rem;
+      padding: 1.8rem 1rem 1rem;
+      border-top: 1px solid #bedfe7;
+      margin-top: 1rem;
+    }
+
+    .footer-links a {
+      color: #115f6e;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.2rem 0.4rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #0e7a8a;
+      color: #07333d;
+    }
+
+    .highlight-link {
+      background: #0e7a8a;
+      color: #fff !important;
+      padding: 0.4rem 1.2rem !important;
+      border-radius: 60px;
+      font-weight: 600;
+      border-bottom: none !important;
+    }
+
+    .highlight-link:hover {
+      background: #0b6371;
+      color: #f0faff !important;
+    }
+
+    /* –––––– 响应式 –––––– */
+    @media (max-width: 700px) {
+      body {
+        padding: 0 1rem 2.5rem;
+      }
+
+      .hero {
+        padding: 2.4rem 0.8rem 2rem;
+        margin: 0 -1rem 1.8rem;
+        border-radius: 0 0 2rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .hero h1 span {
+        display: block;
+        margin: 0.5rem 0 0;
+        font-size: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .explainer {
+        padding: 1.6rem 1.2rem;
+        border-radius: 24px;
+      }
+
+      .explainer h2 {
+        font-size: 1.4rem;
+      }
+
+      .faq-summary {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .footer-links {
+        gap: 0.8rem 1.6rem;
+        padding: 1.2rem 0.5rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 0.98rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <h1>
+        半岛体育
+        <span>稳定 · 清晰 · 持续</span>
+      </h1>
+      <p>
+        体育数据服务与内容入口，围绕赛事信息、实时动态与常规使用场景，
+        提供简洁一致的访问体验。
+      </p>
+    </div>
+
+    <!-- 优势区 网格卡片 -->
+    <div class="grid-2">
+      <div class="card">
+        <h3>持久的访问路径</h3>
+        <p>长期维护的解析与分发结构，避免频繁变动带来的困惑。入口层面的稳定性是日常使用的基础，也是信息服务可靠性的体现。</p>
+      </div>
+      <div class="card">
+        <h3>轻量适配体验</h3>
+        <p>页面结构与资源组织遵循低依赖原则，在主流设备与网络条件下均可快速加载。不堆叠额外脚本，关注核心信息传递。</p>
+      </div>
+      <div class="card">
+        <h3>赛事信息聚合</h3>
+        <p>覆盖多类体育项目的基础数据、赛程与关键变动，提供条目化的阅读结构，减少信息噪声。</p>
+      </div>
+      <div class="card">
+        <h3>场景化引导</h3>
+        <p>从常规浏览到深度查阅，界面布局围绕任务流展开。各模块之间保持逻辑承接关系，帮助用户快速定位所需内容。</p>
+      </div>
+    </div>
+
+    <!-- 说明区（知识型段落） -->
+    <div class="explainer">
+      <h2>关于稳定入口与页面设计</h2>
+      <p>
+        在信息服务中，“入口”的稳定不仅指域名可达，更包括内容结构的可预期性。
+        <a href="https://panel-bdsport.com" style="color: #0e7a8a; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">半岛体育</a> 
+        在页面组织上采用模块化分区：导航、卡片概览、分层说明与常见问题摘要，每一部分承担特定的引导角色。
+        用户无需频繁适应布局变化，即可在不同设备上获得一致的浏览节奏。
+      </p>
+      <p>
+        <span class="tag">数据时效</span>
+        <span class="tag">模块复用</span>
+        <span class="tag">低冗余</span>
+        上述特征构成了当前版本的设计基调。从体育数据的呈现方式到交互反馈的轻重，均优先考虑信息清晰度与操作流畅性。
+        同时，页面中的链接与说明段落共同构成一个可被反复参照的“内容锚点”，减少因信息分散带来的认知负担。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <h3>常见疑问摘要</h3>
+
+      <div class="faq-item">
+        <div class="faq-q">页面的内容更新频率是怎样的？</div>
+        <div class="faq-a">依据赛事周期与数据源变动进行同步，主要模块保持按日或按轮次刷新。无固定批量更新时间，以实际数据发布为准。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">移动端访问是否有额外限制？</div>
+        <div class="faq-a">页面已针对手机与平板进行适配，通过视口控制及弹性网格保证基本可用性。建议使用系统自带浏览器或主流第三方浏览器访问。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">能否通过单一入口获取所有体育项目信息？</div>
+        <div class="faq-a">入口页面提供分类概览与指向深层内容的链接，不同项目的数据展示形式可能存在差异，但均可从统一导航抵达。</div>
+      </div>
+
+      <div style="margin-top: 1rem; font-size: 0.92rem; color: #1b5765;">
+        更多细节可参考页面内各模块说明，或通过底部链接了解其他相关内容。
+      </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+      <a href="https://panel-bdsport.com" class="highlight-link">半岛体育</a>
+      <a href="#">数据说明</a>
+      <a href="#">项目分类</a>
+      <a href="#">使用指引</a>
+      <a href="#">内容结构</a>
+    </div>
+
+  </div>
+</body>
+</html>
